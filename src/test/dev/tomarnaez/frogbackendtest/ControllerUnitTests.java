@@ -19,7 +19,6 @@ import static org.hamcrest.Matchers.*;
 import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -47,7 +46,7 @@ class ControllerUnitTests {
 
     @Test
     public void get_AllBooks_returnsOkWithListOfBooks() throws Exception {
-        List<Book> bookList = new ArrayList<>();
+        ArrayList<Book> bookList = new ArrayList<>();
         Book book1 = new Book("1852", "Book1", "Author1", 1990);
         Book book2 = new Book("1862", "Book2", "Author2", 1991);
 
