@@ -149,7 +149,7 @@ public class IntegrationTests {
 
     // test for delete book - status code
     @Test
-    void givenBookId_whenDeleteBook_thenReturn200() throws Exception {
+    void whenDeleteBook_GivenValidId_thenReturn200() throws Exception {
         Book book = new Book("195-52958-252", "Book Title", "Thomas", 1997);
 
         bookService.addBook(book);
@@ -157,6 +157,14 @@ public class IntegrationTests {
         ResultActions response = mockMvc.perform(delete("/api/books/{id}", book.getId()));
 
         response.andExpect(status().isNoContent())
+                .andDo(print());
+    }
+
+    @Test
+    void whenDeleteBook_givenInvalidID_thenReturn404() throws Exception {
+        ResultActions response = mockMvc.perform(delete("/api/books/{id}", 1));
+
+        response.andExpect(status().isNotFound())
                 .andDo(print());
     }
 

@@ -28,6 +28,8 @@ public class BookService {
 
     // DELETE
     public void deleteBook(Long bookId) {
+        Book book = bookRepository.findById(bookId)
+                .orElseThrow(() -> new BookNotFoundException());
         bookRepository.deleteById(bookId);
     }
 
