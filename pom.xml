@@ -14,6 +14,7 @@
     <name>FrogBackendTest</name>
     <description>FrogBackendTest</description>
     <properties>
+        <start-class>dev.tomarnaez.frogbackendtest.BookTestApplication</start-class>
         <java.version>17</java.version>
     </properties>
     <dependencies>
@@ -57,12 +58,12 @@
     </dependencies>
 
     <build>
-        <finalName>${project.name}</finalName>
         <plugins>
-            <plugin>
-                <configuration><mainClass>dev.tomarnaez.frogbackendtest.BookTestApplication</mainClass></configuration>
-                <groupId>org.springframework.boot</groupId>
+            <plugin><groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>dev.tomarnaez.frogbackendtest.BookTestApplication</mainClass>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.gmavenplus</groupId>
