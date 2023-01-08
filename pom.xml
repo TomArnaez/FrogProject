@@ -60,6 +60,7 @@
         <finalName>${project.name}</finalName>
         <plugins>
             <plugin>
+                <configuration><mainClass>dev.tomarnaez.frogbackendtest.BookTestApplication</mainClass></configuration>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
