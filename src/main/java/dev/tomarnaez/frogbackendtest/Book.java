@@ -12,7 +12,7 @@ class Book {
     @Column(name="id")
     private Long id;
 
-    @Column(name="ISBN", nullable = false)
+    @Column(name="ISBN", nullable = false, unique = true)
     @NotBlank(message = "'ISBN' field was empty")
     private String ISBN;
 
