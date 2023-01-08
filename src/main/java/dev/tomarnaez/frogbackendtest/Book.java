@@ -1,8 +1,7 @@
 package dev.tomarnaez.frogbackendtest;
 
 import jakarta.persistence.*;
-
-import java.util.Objects;
+import jakarta.validation.constraints.*;
 
 @Entity
 @Table(name = "books")
@@ -13,16 +12,19 @@ class Book {
     @Column(name="id")
     private Long id;
 
-    @Column(name="ISBN")
+    @Column(name="ISBN", nullable = false)
+    @NotBlank(message = "'ISBN' field was empty")
     private String ISBN;
 
-    @Column(name="title")
+    @Column(name="title", nullable=false)
+    @NotBlank(message = "'title' field was empty")
     private String title;
 
-    @Column(name="author")
+    @Column(name="author", nullable = false)
+    @NotBlank(message = "'author' field was empty")
     private String author;
 
-    @Column(name="publishYear")
+    @Column(name="publishYear", nullable=false)
     private Integer publishYear;
 
     public Book() {}
