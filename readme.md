@@ -18,5 +18,3 @@ Run JUnit tests:
 ```
 ./mvnw test
 ```
-
-Using Postman
