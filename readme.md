@@ -1,4 +1,6 @@
-The REST API is found at http://localhost:8080
+A simple REST API built using the Spring Boot framework.
+
+The local server is found found at http://localhost:8080
 
 Database is initalised with records. Supports Create, Read, Update and Delete at /api/books:
 ```
